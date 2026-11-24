@@ -3,260 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kapwa Ko | Gift-Giving Activity for the PDLs of Batangas City Jail</title>
+  <title>Kapwa Ko | Christmas Gift-Giving Activity for the PDLs of Batangas City Jail</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Navigation Header -->
+  <!-- Floating Glass Navbar -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="#banner" class="logo">
-        <span class="logo-accent">Kapwa</span> Ko
-      </a>
+        <img src="images/logo.svg" alt="Kapwa Ko Logo" class="logo-img" />
+        <img src="images/logo 2.svg" alt="Kapwa Ko Logo" class="logo-wordmark" />
+        </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-        ☰
+        <span></span>
+        <span></span>
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="#banner" class="nav-item active" data-section="banner">Home</a>
         <a href="#about" class="nav-item" data-section="about">About</a>
         <a href="#donate" class="nav-item" data-section="donate">Donate</a>
-        <a href="#donate" class="btn btn-sm btn-primary">Give Now</a>
+        <a href="#donate" class="btn btn-primary btn-sm">Share a Gift</a>
       </nav>
     </div>
   </header>
 
-  <!-- 1. BANNER PAGE (HERO SECTION) -->
+  <!-- 1. BANNER PAGE (CHRISTMAS HERO) -->
   <section id="banner" class="banner-section">
-    <div class="banner-overlay"></div>
-    <div class="container banner-content">
-      <span class="badge">Community Outreach &amp; Donation Drive</span>
-      <h1>Kapwa Ko: Gift-Giving Activity for the PDLs of Batangas City Jail</h1>
-      <p class="banner-subtitle">
-        Extending warmth, dignity, and shared humanity to Persons Deprived of Liberty. 
-        Every contribution brings essential care packages and hope to those behind bars.
-      </p>
-      <div class="banner-actions">
-        <a href="#donate" class="btn btn-primary btn-lg">Donate Today</a>
-        <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
+    <!-- Subtle Snowfall Container -->
+    <div class="snow-container" id="snowContainer" aria-hidden="true"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="container banner-grid">
+      <div class="banner-content">
+        <h1>Kapwa Ko: Gift-Giving Activity for the PDLs of Batangas City Jail</h1>
+        <p class="banner-subtitle">
+          This Christmas season, let no wall keep warmth and hope away. Join us in sharing 
+          Noche Buena treats, essential hygiene kits, and festive joy with Persons Deprived of Liberty.
+        </p>
+        <div class="banner-actions">
+          <a href="#donate" class="btn btn-primary btn-lg">
+            Scan to Give a Gift
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#about" class="btn btn-ghost btn-lg">Our Christmas Mission</a>
+        </div>
       </div>
 
-      <!-- Live Progress Bar -->
-      <div class="progress-card">
-        <div class="progress-header">
-          <span>Donation Drive Goal</span>
-          <span id="progressText">₱22,500 / ₱50,000 (45%)</span>
+      <!-- Modern Glass Impact Card -->
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <span class="status-tag">Gift Goal</span>
         </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="progressBar" style="width: 45%;"></div>
+        <div class="goal-numbers">
+          <span class="raised">₱1,500</span>
+          <span class="target">raised of ₱30,000 target</span>
         </div>
-        <p class="progress-note">Target: 200 Hygiene &amp; Care Kits for Batangas City Jail PDLs</p>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 10%;"></div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>325</strong>
+            <span>Hygiene Kits</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Direct to PDLs</span>
+          </div>
+          <div class="stat">
+            <strong>BJMP</strong>
+            <span>Coordinated</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. ABOUT PAGE -->
+  <!-- 2. ABOUT PAGE (CHRISTMAS BENTO GRID) -->
   <section id="about" class="section about-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Our Purpose</span>
-        <h2>About the Initiative</h2>
-        <p>Rooted in the Filipino value of <em>Kapwa</em>—recognizing ourselves in others.</p>
+        <span class="eyebrow">The Spirit of Paskong Pinoy</span>
+        <h2>Sharing the Warmth of <em>Kapwa</em> This Christmas</h2>
+        <p>Christmas is a season of hope, grace, and togetherness—reminding our PDLs that they are remembered and loved.</p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <h3>Why "Kapwa Ko"?</h3>
+      <div class="bento-grid">
+        <!-- Main Story Card -->
+        <div class="bento-card bento-main">
+          <h3>Why We Celebrate With Them</h3>
           <p>
             <strong>Kapwa Ko: Gift-Giving Activity for the PDLs of Batangas City Jail</strong> is a 
-            grassroots donation drive dedicated to supporting Persons Deprived of Liberty (PDLs) 
-            in Batangas City. Many PDLs face limited access to basic hygiene supplies, clothing, 
-            and emotional encouragement from the outside community.
+            Christmas outreach initiative dedicated to bringing comfort and festive cheer to 
+            Persons Deprived of Liberty (PDLs). For many inside, the holidays can feel isolating 
+            without basic personal care items or a special holiday meal.
           </p>
           <p>
-            Through this initiative, we aim to remind every individual that they are not forgotten—that 
-            compassion transcends walls and restorative kindness builds a better community for all.
+            Through your generosity, we are assembling Christmas care bundles filled with everyday 
+            essentials and holiday treats—proving that the true spirit of Christmas shines brightest 
+            when shared with those who need it most.
           </p>
-
-          <div class="highlights">
-            <div class="highlight-item">
-              <div class="highlight-icon">🧼</div>
-              <div>
-                <h4>Essential Hygiene Kits</h4>
-                <p>Soap, shampoo, toothbrush, toothpaste, towels, and sanitary supplies.</p>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <div class="highlight-icon">🍱</div>
-              <div>
-                <h4>Shared Meals &amp; Snacks</h4>
-                <p>Nutritious food packs distributed during the outreach program.</p>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <div class="highlight-icon">💌</div>
-              <div>
-                <h4>Messages of Hope</h4>
-                <p>Handwritten notes of encouragement from donors and volunteers.</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="about-card">
-          <h3>Event &amp; Distribution Details</h3>
-          <ul class="info-list">
-            <li>
-              <strong>Beneficiaries:</strong>
-              <span>Persons Deprived of Liberty (PDLs), Batangas City Jail</span>
-            </li>
-            <li>
-              <strong>Location:</strong>
-              <span>Batangas City Jail, Batangas City, Batangas</span>
-            </li>
-            <li>
-              <strong>Target Date:</strong>
-              <span>To Be Announced (Update Here)</span>
-            </li>
-            <li>
-              <strong>Coordination:</strong>
-              <span>In coordination with BJMP Batangas City Jail officials</span>
-            </li>
-            <li>
-              <strong>Transparency:</strong>
-              <span>100% of funds go directly to care packages &amp; food packs. Liquidation report will be published post-event.</span>
-            </li>
-          </ul>
+        <!-- Event Details Card -->
+        <div class="bento-card bento-details">
+          <h3> Outreach Snapshot</h3>
+          <div class="detail-row">
+            <span class="detail-label">Beneficiaries</span>
+            <span class="detail-value"><b>325</b> PDLs of Batangas City Jail</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">BJMP San Jose, Sico, Batangas City</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Gift-Giving Date</span>
+            <span class="detail-value">December 19, 2026 </span>
+          </div>
+        </div>
+        <!-- 3 Christmas Gift Pillars -->
+        <div class="bento-card bento-feature">
+          <div class="icon-box">🎁</div>
+          <h4>Christmas Hygiene Bundles</h4>
+          <p>Bath soap, shampoo, toothbrush, toothpaste, face towels, and personal care items.</p>
+        </div>
+
+        <div class="bento-card bento-feature">
+          <div class="icon-box">🍽️</div>
+          <h4>Holiday Meals &amp; Treats</h4>
+          <p>Special Christmas meal packs, snacks, and refreshments shared during the gathering.</p>
+        </div>
+
+        <div class="bento-card bento-feature">
+          <div class="icon-box">✉️</div>
+          <h4>Christmas Cards of Hope</h4>
+          <p>Heartfelt holiday greetings submitted by donors via our Google Form to uplift spirits.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. DONATION PAGE -->
+  <!-- 3. DONATE NOW PAGE (QR CODE + GOOGLE FORMS ONLY) -->
   <section id="donate" class="section donate-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Make an Impact</span>
-        <h2>Support the Donation Drive</h2>
-        <p>Choose a care package tier or enter any amount you wish to share.</p>
+        <span class="eyebrow">Be a Christmas Blessing</span>
+        <h2>Two Simple Steps to Share Joy</h2>
+        <p>Scan your preferred QR code below to send your Christmas gift, then log your details in our Google Form.</p>
       </div>
 
-      <div class="donate-grid">
-        <!-- Donation Form -->
-        <div class="donate-form-card">
-          <h3>Send a Monetary Pledge</h3>
-          <form id="donationForm">
-            <label class="form-label">Select Amount (PHP)</label>
-            <div class="preset-amounts">
-              <button type="button" class="amount-btn" data-amount="250">₱250<small>1 Hygiene Kit</small></button>
-              <button type="button" class="amount-btn active" data-amount="500">₱500<small>2 Care Kits</small></button>
-              <button type="button" class="amount-btn" data-amount="1000">₱1,000<small>4 Care Kits</small></button>
-              <button type="button" class="amount-btn" data-amount="2500">₱2,500<small>10 Care Kits</small></button>
-            </div>
+      <div class="donate-wrapper">
+        <!-- Step 1: QR Code Viewer -->
+        <div class="qr-card">
+          <div class="step-pill">Step 1 • Scan &amp; Send Gift</div>
+          <h3>Official Donation Channels</h3>
 
-            <div class="form-group">
-              <label for="customAmount">Or Enter Custom Amount (₱)</label>
-              <input type="number" id="customAmount" min="1" value="500" required />
-            </div>
+          <!-- Channel Tabs -->
+          <div class="channel-tabs" role="tablist">
+            <button class="tab-btn active" data-channel="gcash">GCash</button>
+            <button class="tab-btn" data-channel="maya">Maya</button>
+            <button class="tab-btn" data-channel="bank">Bank QR</button>
+          </div>
 
-            <div class="form-group">
-              <label for="donorName">Full Name (or "Anonymous")</label>
-              <input type="text" id="donorName" placeholder="Juan Dela Cruz" required />
+          <!-- QR Display Box -->
+          <div class="qr-stage">
+            <div class="qr-frame">
+              <!-- Replace the src below with your actual QR code image path -->
+              <img 
+                id="qrImage" 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=GCash-KapwaKo-09170000000" 
+                alt="Donation QR Code" 
+              />
             </div>
-
-            <div class="form-group">
-              <label for="paymentMethod">Preferred Payment Channel</label>
-              <select id="paymentMethod" required>
-                <option value="GCash">GCash</option>
-                <option value="Maya">Maya</option>
-                <option value="BDO">BDO Bank Transfer</option>
-                <option value="BPI">BPI Bank Transfer</option>
-                <option value="In-Kind">In-Kind Goods Drop-off</option>
-              </select>
+            <div class="qr-meta">
+              <span class="channel-badge" id="channelTitle">GCash Official Account</span>
+              <p class="account-holder" id="accountName">Account Name: <strong>Kapwa Ko Organizing Team</strong></p>
+              <div class="account-copy-row">
+                <span id="accountNumber">0917-000-0000</span>
+                <button type="button" class="copy-pill" id="copyAccountBtn">Copy</button>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label for="donorMessage">Message of Hope for PDLs (Optional)</label>
-              <textarea id="donorMessage" rows="3" placeholder="Write a short encouraging note..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block">Confirm Pledge</button>
-          </form>
+          </div>
         </div>
 
-        <!-- Payment Channels & In-Kind Info -->
-        <div class="channels-card">
-          <h3>Official Donation Channels</h3>
-          <p class="channel-intro">
-            You may send your monetary donations directly through any of the verified accounts below:
+        <!-- Step 2: Google Forms Link Card -->
+        <div class="gform-card">
+          <div class="step-pill step-pill-accent">Step 2 • Confirm &amp; Send Holiday Note</div>
+          <h3>Log Your Christmas Gift</h3>
+          <p class="gform-desc">
+            After scanning the QR code and completing your transfer, please fill out our official 
+            Google Form so we can verify your receipt, record your gift for transparency, 
+            and include your Christmas greeting for the PDLs.
           </p>
 
-          <div class="channel-box">
-            <div class="channel-header">
-              <strong>GCash / Maya</strong>
-              <button type="button" class="copy-btn" data-copy="0917-000-0000">Copy Number</button>
-            </div>
-            <p>Account Name: <strong>Kapwa Ko Organizing Team</strong></p>
-            <p>Account Number: <strong>0917-000-0000</strong></p>
-          </div>
+          <ul class="checklist">
+            <li>Upload a screenshot of your transfer receipt</li>
+            <li>Enter your name (or choose to give anonymously)</li>
+            <li>Write a short Christmas greeting or message of hope</li>
+          </ul>
 
-          <div class="channel-box">
-            <div class="channel-header">
-              <strong>BPI / BDO Bank Transfer</strong>
-              <button type="button" class="copy-btn" data-copy="0000-0000-00">Copy Account</button>
-            </div>
-            <p>Account Name: <strong>Kapwa Ko Initiative</strong></p>
-            <p>Account Number: <strong>0000-0000-00</strong></p>
-          </div>
+          <!-- Replace href with your actual Google Form URL -->
+          <a 
+            href="https://forms.google.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary btn-lg btn-block gform-btn"
+          >
+            Open Donor Google Form
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
 
-          <div class="in-kind-box">
-            <h4>📦 In-Kind Donations Accepted</h4>
-            <ul>
-              <li>Bath soap, shampoo sachets, toothpaste, toothbrushes</li>
-              <li>Face towels, slippers, white t-shirts</li>
-              <li>Bottled water, biscuits, canned goods (easy-open)</li>
-            </ul>
-            <p class="drop-off-note">
-              <strong>Drop-off Point:</strong> Batangas City (Contact organizers for exact address &amp; schedule).
-            </p>
-          </div>
+          <p class="gform-note">Opens Google Forms in a new tab • Takes less than 1 minute</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Confirmation Modal -->
-  <div class="modal" id="confirmationModal">
-    <div class="modal-content">
-      <span class="close-modal" id="closeModal">&times;</span>
-      <div class="modal-icon">💛</div>
-      <h3>Maraming Salamat, <span id="modalDonorName">Ka-Kapwa</span>!</h3>
-      <p id="modalSummary"></p>
-      <p class="modal-subtext">
-        Please send your proof of transfer to our official page or email so we can include your name in our transparency log.
-      </p>
-      <button class="btn btn-primary" id="modalDoneBtn">Done</button>
-    </div>
-  </div>
-
-  <!-- Footer -->
+  <!-- Modern Christmas Footer -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div>
-        <h4>Kapwa Ko: Gift-Giving Activity for the PDLs of Batangas City Jail</h4>
-        <p>Sharing hope, dignity, and compassion with our fellow Filipinos.</p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#banner" class="logo footer-logo">
+        <img src="images/logo.png" alt="Kapwa Ko Logo" class="logo-img" />
+        <span>Kapwa <strong>Ko</strong></span>
+        </a>
+        <p>Christmas Gift-Giving Activity for the PDLs of Batangas City Jail</p>
       </div>
-      <div class="footer-links">
+      <div class="footer-nav">
         <a href="#banner">Home</a>
         <a href="#about">About</a>
         <a href="#donate">Donate</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kapwa Ko Donation Drive. All rights reserved.</p>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Kapwa Ko Christmas Initiative. Maligayang Pasko at Maraming Salamat!</p>
     </div>
   </footer>
 

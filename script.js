@@ -1,5 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Mobile Navigation Toggle
+  // 1. Gentle Snowfall Effect on Christmas Hero Banner
+  const snowContainer = document.getElementById("snowContainer");
+  if (snowContainer) {
+    const flakeCount = 28;
+    for (let i = 0; i < flakeCount; i++) {
+      const flake = document.createElement("span");
+      flake.classList.add("snowflake");
+      const size = Math.random() * 5 + 3; // 3px to 8px
+      flake.style.width = `${size}px`;
+      flake.style.height = `${size}px`;
+      flake.style.left = `${Math.random() * 100}%`;
+      flake.style.animationDuration = `${Math.random() * 7 + 7}s`;
+      flake.style.animationDelay = `${Math.random() * 6}s`;
+      snowContainer.appendChild(flake);
+    }
+  }
+
+  // 2. Mobile Navigation Toggle
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
   const navItems = document.querySelectorAll(".nav-item");
@@ -14,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 2. Highlight Active Nav Link on Scroll
+  // 3. Active Nav State on Scroll
   const sections = document.querySelectorAll("section");
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 130;
       if (window.scrollY >= sectionTop) {
         current = section.getAttribute("id");
       }
@@ -33,77 +50,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3. Donation Amount Selection
-  const amountButtons = document.querySelectorAll(".amount-btn");
-  const customAmountInput = document.getElementById("customAmount");
+  // 4. Donation QR Channel Switcher
+  const channels = {
+    gcash: {
+      title: "GCash Official Account",
+      name: "Kapwa Ko Organizing Team",
+      number: "0917-000-0000",
+      // Replace with your local image path e.g. "images/qr-gcash.png"
+      qrSrc: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=GCash-KapwaKo-09170000000"
+    },
+    maya: {
+      title: "Maya Official Account",
+      name: "Kapwa Ko Organizing Team",
+      number: "0918-000-0000",
+      // Replace with your local image path e.g. "images/qr-maya.png"
+      qrSrc: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=Maya-KapwaKo-09180000000"
+    },
+    bank: {
+      title: "BPI / BDO InstaPay QR",
+      name: "Kapwa Ko Initiative",
+      number: "0000-0000-00",
+      // Replace with your local image path e.g. "images/qr-bank.png"
+      qrSrc: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=Bank-KapwaKo-0000000000"
+    }
+  };
 
-  amountButtons.forEach((btn) => {
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const qrImage = document.getElementById("qrImage");
+  const channelTitle = document.getElementById("channelTitle");
+  const accountName = document.getElementById("accountName");
+  const accountNumber = document.getElementById("accountNumber");
+  const copyAccountBtn = document.getElementById("copyAccountBtn");
+
+  tabButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      amountButtons.forEach((b) => b.classList.remove("active"));
+      tabButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      customAmountInput.value = btn.getAttribute("data-amount");
+
+      const selected = channels[btn.getAttribute("data-channel")];
+      qrImage.src = selected.qrSrc;
+      channelTitle.textContent = selected.title;
+      accountName.innerHTML = `Account Name: <strong>${selected.name}</strong>`;
+      accountNumber.textContent = selected.number;
     });
   });
 
-  customAmountInput.addEventListener("input", () => {
-    amountButtons.forEach((b) => b.classList.remove("active"));
-  });
-
-  // 4. Copy Account Details to Clipboard
-  const copyButtons = document.querySelectorAll(".copy-btn");
-  copyButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const textToCopy = btn.getAttribute("data-copy");
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        const originalText = btn.textContent;
-        btn.textContent = "Copied!";
-        setTimeout(() => {
-          btn.textContent = originalText;
-        }, 2000);
-      });
+  // 5. Copy Account Number Button
+  copyAccountBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(accountNumber.textContent).then(() => {
+      copyAccountBtn.textContent = "Copied!";
+      setTimeout(() => {
+        copyAccountBtn.textContent = "Copy";
+      }, 2000);
     });
-  });
-
-  // 5. Handle Donation Form Submission & Live Progress Update
-  let currentRaised = 22500;
-  const targetGoal = 50000;
-
-  const donationForm = document.getElementById("donationForm");
-  const progressBar = document.getElementById("progressBar");
-  const progressText = document.getElementById("progressText");
-
-  const modal = document.getElementById("confirmationModal");
-  const modalDonorName = document.getElementById("modalDonorName");
-  const modalSummary = document.getElementById("modalSummary");
-  const closeModal = document.getElementById("closeModal");
-  const modalDoneBtn = document.getElementById("modalDoneBtn");
-
-  donationForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const amount = parseFloat(customAmountInput.value) || 0;
-    const name = document.getElementById("donorName").value.trim() || "Ka-Kapwa";
-    const method = document.getElementById("paymentMethod").value;
-
-    // Update progress bar
-    currentRaised += amount;
-    const percentage = Math.min(Math.round((currentRaised / targetGoal) * 100), 100);
-    progressBar.style.width = `${percentage}%`;
-    progressText.textContent = `₱${currentRaised.toLocaleString()} / ₱${targetGoal.toLocaleString()} (${percentage}%)`;
-
-    // Show confirmation modal
-    modalDonorName.textContent = name;
-    modalSummary.textContent = `Your pledge of ₱${amount.toLocaleString()} via ${method} has been recorded for Kapwa Ko: Gift-Giving Activity for the PDLs of Batangas City Jail.`;
-    modal.classList.add("show");
-
-    donationForm.reset();
-    customAmountInput.value = 500;
-  });
-
-  const hideModal = () => modal.classList.remove("show");
-  closeModal.addEventListener("click", hideModal);
-  modalDoneBtn.addEventListener("click", hideModal);
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) hideModal();
   });
 });
