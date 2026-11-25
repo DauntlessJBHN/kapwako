@@ -53,25 +53,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Donation QR Channel Switcher
   const channels = {
     gcash: {
-      title: "GCash Official Account",
-      name: "Kapwa Ko Organizing Team",
-      number: "0917-000-0000",
+      title: "GCash Account",
+      name: "Derwin Abe",
+      number: "0935 791 6053",
       // Replace with your local image path e.g. "images/qr-gcash.png"
-      qrSrc: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=GCash-KapwaKo-09170000000"
+      qrSrc: "images/gcash-qr.png"
     },
     maya: {
-      title: "Maya Official Account",
-      name: "Kapwa Ko Organizing Team",
-      number: "0918-000-0000",
+      title: "Maya Account",
+      name: "Aerolle Sana",
+      number: "0929 228 1169",
       // Replace with your local image path e.g. "images/qr-maya.png"
-      qrSrc: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=Maya-KapwaKo-09180000000"
+      qrSrc: "images/maya-qr.png"
     },
     bank: {
-      title: "BPI / BDO InstaPay QR",
-      name: "Kapwa Ko Initiative",
-      number: "0000-0000-00",
+      title: "GoTyme Bank",
+      name: "Aerolle Tarcelo Sana",
+      number: "0929 228 1169",
       // Replace with your local image path e.g. "images/qr-bank.png"
-      qrSrc: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=Bank-KapwaKo-0000000000"
+      qrSrc: "images/gotyme-qr.png"
     }
   };
 
